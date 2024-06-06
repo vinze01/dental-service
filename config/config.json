@@ -3,23 +3,23 @@
       "username": "${DB_USERNAME || 'root'}",
       "password": "${DB_PASSWORD || 'Jrjjjrvct123.'}",
       "database": "${DB_NAME || 'doos'}",
-      "host": "${DB_HOST || '127.0.0.1'}",
+      "host": "${DB_HOST || 'localhost'}",
       "port": "${DB_PORT || 3306}",
       "dialect": "mysql"
     },
     "test": {
       "username": "${DB_USERNAME || 'root'}",
       "password": "${DB_PASSWORD || 'Jrjjjrvct123.'}",
-      "database": "${DB_NAME || null}",
-      "host": "${DB_HOST || null}",
+      "database": "${DB_NAME || doos}",
+      "host": "${DB_HOST || localhost}",
       "port": "${DB_PORT || 3306}",
       "dialect": "mysql"
     },
     "production": {
       "username": "${DB_USERNAME || 'root'}",
       "password": "${DB_PASSWORD || 'Jrjjjrvct123.'}",
-      "database": "${DB_NAME || null}",
-      "host": "${DB_HOST || null}",
+      "database": "${DB_NAME || doos}",
+      "host": "${DB_HOST || localhost}",
       "port": "${DB_PORT || 3306}",
       "dialect": "mysql"
     }
