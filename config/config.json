@@ -3,24 +3,24 @@
       "username": "${DB_USERNAME || 'root'}",
       "password": "${DB_PASSWORD || 'Jrjjjrvct123.'}",
       "database": "${DB_NAME || 'doos'}",
-      "host": "${DB_HOSTNAME || 'localhost'}",
-      "port": "${DB_PORT || 3306}",
+      "host": "${DB_HOSTNAME || '127.0.0.1'}",
+      "port": "${DB_PORT || '3306'}",
       "dialect": "mysql"
     },
     "test": {
       "username": "${DB_USERNAME || 'root'}",
       "password": "${DB_PASSWORD || 'Jrjjjrvct123.'}",
-      "database": "${DB_NAME || doos}",
-      "host": "${DB_HOSTNAME || localhost}",
-      "port": "${DB_PORT || 3306}",
+      "database": "${DB_NAME || 'doos'}",
+      "host": "${DB_HOSTNAME || '127.0.0.1'}",
+      "port": "${DB_PORT || '3306'}",
       "dialect": "mysql"
     },
     "production": {
       "username": "${DB_USERNAME || 'root'}",
       "password": "${DB_PASSWORD || 'Jrjjjrvct123.'}",
-      "database": "${DB_NAME || doos}",
-      "host": "${DB_HOSTNAME || localhost}",
-      "port": "${DB_PORT || 3306}",
+      "database": "${DB_NAME || 'doos'}",
+      "host": "${DB_HOSTNAME || '127.0.0.1'}",
+      "port": "${DB_PORT || '3306'}",
       "dialect": "mysql"
     }
   }
