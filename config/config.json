@@ -3,7 +3,7 @@
       "username": "${DB_USERNAME || 'root'}",
       "password": "${DB_PASSWORD || 'Jrjjjrvct123.'}",
       "database": "${DB_NAME || 'doos'}",
-      "host": "${DB_HOST || 'localhost'}",
+      "host": "${DB_HOSTNAME || 'localhost'}",
       "port": "${DB_PORT || 3306}",
       "dialect": "mysql"
     },
@@ -11,7 +11,7 @@
       "username": "${DB_USERNAME || 'root'}",
       "password": "${DB_PASSWORD || 'Jrjjjrvct123.'}",
       "database": "${DB_NAME || doos}",
-      "host": "${DB_HOST || localhost}",
+      "host": "${DB_HOSTNAME || localhost}",
       "port": "${DB_PORT || 3306}",
       "dialect": "mysql"
     },
@@ -19,7 +19,7 @@
       "username": "${DB_USERNAME || 'root'}",
       "password": "${DB_PASSWORD || 'Jrjjjrvct123.'}",
       "database": "${DB_NAME || doos}",
-      "host": "${DB_HOST || localhost}",
+      "host": "${DB_HOSTNAME || localhost}",
       "port": "${DB_PORT || 3306}",
       "dialect": "mysql"
     }
