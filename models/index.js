@@ -4,8 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
 const process = require('process');
-import dotenv from 'dotenv';
-dotenv.config();
+require('dotenv').config();
 const basename = path.basename(__filename);
 const db = {};
 
