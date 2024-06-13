@@ -19,8 +19,8 @@ const appointmentRouter = require('./routes/Appointments')
 app.use("/appointments", appointmentRouter);
 
 db.sequelize.sync().then(() => {
-    app.listen(process.env.PORT || 3001, () => {
-        console.log('Server running on port 3001');
+    app.listen(process.env.MYSQLPORT || 3001, () => {
+        console.log(`Server running on port: ${process.env.MYSQLPORT}`);
     })
 })
 
