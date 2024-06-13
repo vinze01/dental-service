@@ -1,22 +1,26 @@
 'use strict';
 
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import Sequelize from 'sequelize';
-import config from '../config/config.js';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const fs = require('fs');
+const path = require('path');
+const Sequelize = require('sequelize');
+const process = require('process');
+import dotenv from 'dotenv';
+dotenv.config();
 const basename = path.basename(__filename);
 const db = {};
 
-const sequelize = new Sequelize(config.database, config.username, config.password, {
-  host: config.host,
-  dialect: config.dialect,
-  port: config.port,
-  logging: false,
-});
+const sequelize = new Sequelize(
+  process.env.MYSQLDATABASE,
+  process.env.MYSQLUSER,
+  process.env.MYSQLPASSWORD,
+  {
+    host: process.env.MYSQLHOST,
+    port: process.env.MYSQLPORT,
+    dialect: 'mysql',
+    logging: console.log
+
+  }
+);
 
 fs
   .readdirSync(__dirname)
@@ -29,11 +33,8 @@ fs
     );
   })
   .forEach(file => {
-    const model = import(path.join(__dirname, file));
-    model.then(module => {
-      const modelInstance = module.default(sequelize, Sequelize.DataTypes);
-      db[modelInstance.name] = modelInstance;
-    });
+    const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes);
+    db[model.name] = model;
   });
 
 Object.keys(db).forEach(modelName => {
@@ -45,12 +46,4 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-sequelize.authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.');
-  })
-  .catch(err => {
-    console.error('Unable to connect to the database:', err);
-  });
-
-export default db;
+module.exports = db;
